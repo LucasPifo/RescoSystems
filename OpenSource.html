@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">  
+  <head>    
+    <title>Software Style</title>    
+    <meta charset="UTF-8"> 
+    <meta name="description" content="Pagina sobre automatizacion, Iot, Programación y Tecnología">
+    <meta name="keywords" content="Iot, Automatización, Tecnología, Electronica, Programacion">
+    <meta name="author" content="Rob3rt0 3scobedo">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="img/Favicon.png" />
+      <meta name="theme-color" content="#C23333" />
+      <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <link rel="stylesheet" href="fonts/style.css">
+      <link rel="stylesheet" href="css/proyectos.css">
+      <link rel="stylesheet" href="css/estilos_open.css">
+  </head>  
+  <body>
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+                            <li><a class="waves-effect waves-dark" href="https://github.com/LucasPifo"><i class="fab fa-github"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.youtube.com/channel/UCoAbMLA_cpXcveu4ww5El2w"><i class="fab fa-youtube"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.linkedin.com/in/roberto-carlos-escobedo-santos-645095185/"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.facebook.com/Rob3rto.Escobedo"><i class="fab fa-facebook-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <a href="index.html"><img src="img/Logo Resco.png" height="40px" width="100px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="OpenSource.html">Open source</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Descargas.html">Descargas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+      <div class="salto"></div>
+      <div class="w-100">
+          <div class="container">
+              <p class="d-none d-lg-block position-absolute mt-5 textoOpen">Promoviendo el Open Source!</p>
+          </div>
+          <img class="fondoOpen" src="img/openSource.jpg">
+      </div>
+      <div class="container">
+          <div class="row mt-5">
+              <div class="col">
+                  <div class="card">
+                       <div class="card-body text-center">
+                           <h3 class="card-title">Open Source</h3>
+                           <p class="card-text text-muted" style="font-size: 18px;">Para el desarrollo y la inovacion fomentamos el open source, liberando los codigos fuentes de nuestros sistemas para invitar a los desarrolladores a que contribuyan a mejorarlos en todos los aspectos tanto hardware como software.<br>Ya que el software tiene que estar en constante mantenimiento y mejora, asi con el afan de reduciran bugs y brechas de seguridad.
+                           </p>
+                       </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row mt-5">
+             <div class="col">
+              <div class="card mb-3">
+                  <img src="img/digito.jpg" class="card-img-top filtro" alt="Cargando..">
+                  <div class="card-body mt-4">
+                    <h4 class="card-title"><b>NUEVO PROYECTO OPEN SOURCE</b></h4>
+                    <div class="row mt-5">
+                      <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                          <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Desarrollo</a>
+                          <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Diseño</a>
+                          <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Programación</a>
+                          <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Comunicación</a>
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">El proyecto consiste en un turnador, el cual sera mostrado en un display de 4 digitos, este mismo mostrara la hora en que un turno cambia a otro, ademas de tener comunicacion serial entre algun ordenador para poder ser controlado desde el mismo. </div>
+                          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">El PCB o Circuito impreso fue diseñado con software y grabado con cortadora lazer, desde el digrama electronico hasta el PCB en formato gerber, los diseños son 100% open hardware y estara disponible para su descarga.</div>
+                          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">La programacion fue realizada con la IDE de Arduino para la parte de electronica digital y para la interfaz de escritorio fue programada con Visual Studio.<br></div>
+                          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">La comunicacion entre el display y la computadora se realizó gracias al puerto serie del ordenador, utilizando las terminales de Recepción(RX) y Transmicion(TX) respectivamente.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="copy mt-5">
+              <p>CopyRight © 2018 Resco systems All Rights Reserved</p>
+        </div>    
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

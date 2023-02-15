@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">  
+  <head>    
+    <title>Resco Systems</title>    
+    <meta charset="UTF-8"> 
+    <meta name="description" content="Pagina sobre automatizacion, Iot, Programación y Tecnología">
+    <meta name="keywords" content="Iot, Automatización, Tecnología, Electronica, Programacion">
+    <meta name="author" content="Rob3rt0 3scobedo">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="img/Favicon.png" />
+      <meta name="theme-color" content="#C23333" />
+      <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <link rel="stylesheet" href="css/alertify.min.css">
+      <script src="js/alertify.min.js"></script>
+      <link rel="stylesheet" href="fonts/style.css">
+      <link rel="stylesheet" href="css/estilosContacto.css">
+  </head>  
+  <body >
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+                            <li><a class="waves-effect waves-dark" href="https://github.com/LucasPifo"><i class="fab fa-github"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.youtube.com/channel/UCoAbMLA_cpXcveu4ww5El2w"><i class="fab fa-youtube"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.linkedin.com/in/roberto-carlos-escobedo-santos-645095185/"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.facebook.com/Rob3rto.Escobedo"><i class="fab fa-facebook-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <a href="index.html"><img src="img/Logo Resco.png" height="40px" width="100px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="OpenSource.html">Open source</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Descargas.html">Descargas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+     <script>   
+          $(document).ready(function(){
+              $("#btnContactUs").click(function(){
+                  if($("#name").val().length > 0  && $("#email").val().length > 0 && $("#tel").val().length > 0 && $("#subject").val().length > 0 && $("#message").val().length > 0 ){
+                      $.ajax({                        
+                          type: "POST",                 
+                          url: 'enviar_correo.php',                    
+                          data: $("#formulario").serialize(),
+                          success: function(data){
+                              if(!alertify.myAlert){
+                              //define a new dialog
+                              alertify.dialog('myAlert',function factory(){
+                                return{
+                                  main:function(message){
+                                    this.message = message;
+                                  },
+                                  setup:function(){
+                                      return { 
+                                        buttons:[{text: "Aceptar", key:27/*Esc*/}],
+                                        focus: { element:0 }
+                                      };
+                                  },
+                                  prepare:function(){
+                                    this.setContent(this.message);
+                                  }
+                              }});      
+                            }
+                            alertify.myAlert(data); 
+                              $("#name").val("");
+                              $("#email").val("");
+                              $("#tel").val("");
+                              $("#subject").val("Seleccionar:");
+                              $("#message").val("");
+                          }
+                      });
+                  }else{
+                      if(!alertify.myAlert){
+                      //define a new dialog
+                      alertify.dialog('myAlert',function factory(){
+                        return{
+                          main:function(message){
+                            this.message = message;
+                          },
+                          setup:function(){
+                              return { 
+                                buttons:[{text: "Aceptar", key:27/*Esc*/}],
+                                focus: { element:0 }
+                              };
+                          },
+                          prepare:function(){
+                            this.setContent(this.message);
+                          }
+                      }});
+                    }
+                    //launch it.
+                    alertify.myAlert("Algunos campos estan vacios y deben ser llenados!");
+                  }
+              })
+          });
+      </script>
+        <div class="abajo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <h1 class="h1">
+                            Contactanos</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="well well-sm">
+                        <form method="POST" id="formulario">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Nombre</label>
+                                    <input type="text" class="form-control" id="name" name="nombre" placeholder="Ingresa tu nombre" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        E-mail</label>
+                                   
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu E-mail" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="tel">
+                                        Telefono</label>
+                                    <input type="tel" class="form-control" id="tel" name="telefono" placeholder="Ingresa tu telefono" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">
+                                        Asunto</label>
+                                    <select id="subject" name="subject" class="form-control" required="required">
+                                        <option value="na" selected="">Seleccionar:</option>
+                                        <option value="service">Servicios generales</option>
+                                        <option value="suggestions">Sugerencia</option>
+                                        <option value="product">Soporte de sistema</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Mensaje</label>
+                                    <textarea name="mensaje" id="message" class="form-control" rows="9" cols="25" required="required"
+                                        placeholder="Mensaje"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="button" class="btn btn-success pull-right" id="btnContactUs" value="Enviar mensaje">
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <form>
+                    <legend><span class="glyphicon glyphicon-globe"></span>Ubicación</legend>
+                    <address>
+                        <strong>Resco Systems</strong><br>
+                        Juárez, Nuevo Leon, Mexico<br>
+                       <br>
+                    </address>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.044426792162!2d-100.12568268507859!3d25.636650983693624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM4JzExLjkiTiAxMDDCsDA3JzI0LjYiVw!5e0!3m2!1ses-419!2smx!4v1551124719867" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <address>
+                       
+                    </address>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    <div class="container mb-4">
+         
+	<div class="row text-center mt-4">
+		<div class="col-sm-3 col-xs-6 first-box">
+        <h1><span class="fa fa-mobile"></span></h1>
+        <h3>Telefono</h3>
+        <p><a href="tel:+528183587310"> 8118631856</a></p><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 second-box">
+        <h1><span class="fa fa-map-marker"></span></h1>
+        <h3>Ubicacion</h3>
+        <p>Calle Rosal 623</p><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 third-box">
+        <h1><span class="fa fa-envelope"></span></h1>
+        <h3>E-mail</h3>
+        <p>betoescobedo34@gmail.com</p><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 fourth-box">
+    	<h1><span class="fa fa-globe"></span></h1>
+        <h3>Web</h3>
+        <p>Rescosystems</p><br>
+    </div>
+	</div>
+</div>
+     <footer class="footer text-center">
+        <div class="copy">
+              <p>CopyRight © 2018 Resco systems All Rights Reserved</p>
+          </div>
+    </footer>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+  
+    </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">  
+  <head>    
+    <title>Software Style</title>    
+    <meta charset="UTF-8"> 
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+      <link rel="icon" type="image/png" href="img/iconito.png" />
+      <meta name="theme-color" content="#C23333" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|PT+Sans|Roboto+Condensed|Source+Sans+Pro" rel="stylesheet">
+      <link rel="stylesheet" href="fonts/style.css">
+      <link rel="stylesheet" href="css/ejemplos-estilos.css">
+  </head>  
+  <body>
+      <header>
+          <div class="encabezado">
+              <div class="contenedor">
+                  <div class="iconos">
+                      <a class="face" href="http://www.facebook.com"><span class="icon-facebook3"></span></a>
+                      <a class="you" href="http://www.youtube.com"><span class="icon-youtube"></span></a>
+                      <a class="what" href="http://www.whatsapp.com"><span class="icon-whatsapp"></span></a>
+                      <a class="insta" href="http://www.instagram.com"><span class="icon-instagram"></span></a>
+                  </div>
+              </div>
+          </div>
+          <div class="logo">
+              <div class="forma"><h6>Software Style</h6>
+              </div>
+              <div class="menu_conten">
+                  <p id="icono_menu" class="icono_menu">
+                      <span class="icon-menu"></span>
+                  </p>
+              </div>
+          </div>
+      </header>
+      <div class="menu_acomodo">
+          <nav id="menu" class="menu">
+              <ul>
+                <li><a class="servicio" href="index.html"><span class="icon-home"></span> Home</a></li>  
+                <li><a class="servicio" onclick="ocultar();" href="index.html#apunta_servicio"><span class="icon-tools"></span> Servicios</a></li>
+                <li><a class="servicio" href="" id="btn_ejemplos" onclick="ocultar();"><span class="icon-embed"></span> Ejemplos</a></li>
+                <li><a class="servicio" href="index.html#mapa" onclick="ocultar();"><span class="icon-location"></span> Ubicacion</a></li>
+                <li><a class="servicio" href="proyectos.html" onclick="ocultar();"><span class="icon-laptop"></span> Proyectos</a></li>
+                <li><a class="servicio" href="acerca_de.html" onclick="ocultar();"><span class="icon-question"></span> Acerca de</a></li>
+              </ul>
+          </nav>
+      </div>
+      <div class="sombra"></div>
+      <div class="salto"></div>
+      <div class="ejemplos">
+          <div class="ecabezadoEjemplos">
+              <div class="contenedor">
+                <p>Ejemplos de fragmentos de codigos, PHP, Javascript y funciones varias.</p>
+              </div>
+          </div>
+            <div class="listaEjemplos">
+                <div class="contenedor">
+                    <p class="encaliseje">Lista de ejemplos</p>
+                    <div class="navejemplos">
+                        <ul>
+                            <li class="opcioneslista" id="opcioneslista1">Percepron en PHP<b>+&nbsp;</b></li>
+                            <div class="perceptron" id="perceptron">
+                                    <p class="perceenca">Perceptron Compuerta OR/AND PHP</p>
+                                    <div class="pasos_perceptron">
+                                        <div class="info_perceptron">
+                                            <p>El <b>Perceptron</b> es la neurona artificial o unidad básica de inferencia en forma de discriminador lineal, a partir de lo cual se desarrolla un algoritmo capaz de generar un criterio para seleccionar un sub-grupo a partir de un grupo de componentes más grande.</p><p><b>En este caso crearemos un perceptron en PHP, pero puede ser interpretado en Javasccript o cualquier otro lenguaje de programacion.</b></p>
+                                        </div>
+                                        <div class="paso1_perceptron">
+                                            <p>Lo primero que debemos hacer es declarar las entradas que tendra nuestro perceptron, como en este ejemplo emularemos la compuerta AND, utilizaremos las entradas: </p>
+<pre>
+$entradas = [[1,1,1],
+            [1,0,0],
+            [0,1,0],
+            [0,0,0],
+            ];
+</pre>
+                                            <p>La variable <b>$entradas</b> es una matriz que contiene en el primer indice los numeros del primer set de datos. Cada uno de esos numeros son en si "neuronas" y una fila en vertical serian las "capas".</p>
+                                            <p>Sabiendo esto, en el primer set de datos tendremos que el primer valor de entrada seria "1", el segundo valor de entrada seria "1", y la salida esperada o deseada seria "1". Esto en base a la arquitectura del perceptron.</p>
+                                        </div>
+                                        <div class="paso1_perceptron">
+                                            <p>El segundo paso seria calcular la longitud de la matriz(Esto dependeria del lenguaje de programacion), asi como la longitud de alguno de los sets de entranamiento.</p>
+<pre>
+$longitud=count($entradas);
+$longitud2=count($entradas[0]);
+</pre>
+                                            <p>Declarar el numero de <b>epocas</b>, que son el numero de iteraciones que realiza el perceptron, ademas de la condicion para que el ciclo se repita hasta encontral una respuesta en concreto. Como en el ejemplo sera con valores random.</p>
+<pre>
+$epocas=0;
+$ciclo = false;
+</pre>
+                                        </div>
+                                        <div class="paso1_perceptron">
+                                            <p>El tercer paso seria realizar un ciclo while, cada vez que el perceptron falle la variable <b>$epocas</b> aumentara, esto para determinar el numero de epocas. Cambiamos el valor de la variable <b>$ciclo</b> para que se siga repitiendo. Declaramos cada uno de los pesos con un numero aleatorio(Eso se podria simplificar usando una funcion). La variable <b>$umbral</b> que se trata de un peso sinaptico mas tambien sera rendomizada.</p>
+<pre>
+while(!$ciclo){
+    $epocas++;
+    $ciclo = true;
+    $peso1 = rand(1,10000000);
+    $peso1 = ($peso1 - rand(1,10000000))/10000000;
+    $peso2 = rand(1,10000000);
+    $peso2 = ($peso2 - rand(1,10000000))/10000000;
+    $umbral = rand(1,10000000);
+    $umbral = ($umbral - rand(1,10000000))/10000000;
+    ...
+</pre>
+                                        </div>                                          
+                                        <div class="paso1_perceptron">
+                                            <p>El cuarto paso seria crear una funcion, tratando de hacer una representacion basica de una sigmoide a la cual la llamaremos "sigmoide".</p>
+                                            <p>La funcion generaliza entre 2 numeros 0 y 1. Si el valor introducido es mayor a 0 la funcion retorna un 1 y un 0 en caso contrario.</p>
+<pre>
+function sigmoide($valor){
+    return $variable = ($valor > 0) ? 1 : 0;
+}                       
+</pre>
+                                        </div>
+                                        <div class="paso1_perceptron">
+                                            <p>Lo siguiente seria crear la funcion principal del perceptron la "neurona". Se trata de la suma de las entradas multiplicado por los pesos mas el umbral.</p>
+<pre>
+function neurona($entrada1,$entrada2,$peso1,$peso2,$umbral){
+    return $total=$umbral+$entrada1*$peso1+$entrada2*$peso2;
+}
+</pre>
+                                        </div>
+                                        <div class="paso1_perceptron">
+                                            <p>Teniendo las 2 funciones creadas, creamos un ciclo for dentro del ciclo while despues de haber declarado las variables randomizadas.Este ciclo for se repetira por cada uno de set de datos(En este caso 4).Realizamos un IF en el cual incluiremos la funcion sigmoide y como parametro agregaremos la funcion neurona y condicionaremos si el resultado de la funcion sigmoide(Que debe retornar 1 o 0), es diferente del resultado deseado, si es verdad entonces seguimos iterando, para eso cambiamos la variable <b>$ciclo</b> a false. Cerramos el if, el for y el while.</p>
+<pre>
+...
+for($i=0; $i&#10094$longitud; $i++){
+    if(sigmoide(neurona($entradas[$i][0],$entradas[$i][1],$peso1,$peso2,$umbral))!=$entradas[$i][2]){
+        $ciclo = false;
+        }
+    }
+}
+</pre>
+                                        </div>
+                                        <div class="paso1_perceptron">
+                                            <p>Al final colocamos echos para visualizar los resultados.</p>
+<pre>
+echo"Peso 1: ". $peso1."\n";
+echo"Peso 2: ". $peso2."\n";
+echo"Umbral: ". $umbral."\n";
+echo "Entrada 1: 1 Entrada 2: 1 : " . sigmoide(neurona($entradas[0][0],$entradas[0][1],$peso1,$peso2,$umbral))."\n";
+echo "Entrada 1: 1 Entrada 2: 0 : " . sigmoide(neurona($entradas[1][0],$entradas[1][1],$peso1,$peso2,$umbral))."\n";
+echo "Entrada 1: 0 Entrada 2: 1 : " . sigmoide(neurona($entradas[2][0],$entradas[2][1],$peso1,$peso2,$umbral))."\n";
+echo "Entrada 1: 0 Entrada 2: 0 : " . sigmoide(neurona($entradas[3][0],$entradas[3][1],$peso1,$peso2,$umbral))."\n";
+echo "Epocas totales: ". $epocas."\n";
+echo "Finalizado!!";
+</pre>
+                                        </div>
+                                    </div>
+                                    <h4 class="final_perceptron">Y el codigo seria el siguiente.</h4>
+                                    <div class="codigo_perceptron">
+<pre>
+$entradas = [[1,1,1],
+[1,0,0],
+[0,1,0],
+[0,0,0],
+];
+$longitud=count($entradas);
+$longitud2=count($entradas[0]);
+$epocas=0;
+$ciclo = false;
+while(!$ciclo){
+    $epocas++;
+    $ciclo = true;
+    $peso1 = rand(1,10000000);
+    $peso1 = ($peso1 - rand(1,10000000))/10000000;
+    $peso2 = rand(1,10000000);
+    $peso2 = ($peso2 - rand(1,10000000))/10000000;
+    $umbral = rand(1,10000000);
+    $umbral = ($umbral - rand(1,10000000))/10000000;
+    for($i=0; $i&#10094$longitud; $i++){
+        if(sigmoide(neurona($entradas[$i][0],$entradas[$i][1],$peso1,$peso2,$umbral))!=$entradas[$i][2]){
+            $ciclo = false;
+        }
+    }
+}
+function neurona($entrada1,$entrada2,$peso1,$peso2,$umbral){
+    return $total=$umbral+$entrada1*$peso1+$entrada2*$peso2;
+}
+function sigmoide($valor){
+    return $variable = ($valor > 0) ? 1 : 0;
+}
+echo<span class="rojo">"Peso 1: "</span>. $peso1.<span class="rojo">"\n"</span>;
+echo<span class="rojo">"Peso 2: "</span>. $peso2.<span class="rojo">"\n"</span>;
+echo<span class="rojo">"Umbral: "</span>. $umbral.<span class="rojo">"\n"</span>;
+echo<span class="rojo"> "Entrada 1: 1 Entrada 2: 1 : "</span> . sigmoide(neurona($entradas[00],$entradas[0][1],$peso1,$peso2,$umbral)).<span class="rojo">"\n"</span>;
+echo<span class="rojo"> "Entrada 1: 1 Entrada 2: 0 : "</span> . sigmoide(neurona($entradas[1][0],$entradas[1][1],$peso1,$peso2,$umbral)).<span class="rojo">"\n"</span>;
+echo<span class="rojo"> "Entrada 1: 0 Entrada 2: 1 : "</span> . sigmoide(neurona($entradas[2][0],$entradas[2][1],$peso1,$peso2,$umbral)).<span class="rojo">"\n"</span>;
+echo<span class="rojo"> "Entrada 1: 0 Entrada 2: 0 : "</span> . sigmoide(neurona($entradas[3][0],$entradas[3][1],$peso1,$peso2,$umbral)).<span class="rojo">"\n"</span>;
+echo<span class="rojo"> "Epocas totales: "</span>. $epocas.<span class="rojo">"\n"</span>;
+echo<span class="rojo"> "Finalizado!!"</span>;
+</pre>
+                                    </div>
+                                </div>
+                            <li class="opcioneslista" id="opcioneslista2">Arreglo multidimencional(Matriz) PHP<b>+&nbsp;</b></li>
+                            <li class="opcioneslista" id="opcioneslista3">Conexion MQTT PHP<b>+&nbsp;</b></li>
+                            <li class="opcioneslista" id="opcioneslista4">Conexion MQTT Javascript<b>+&nbsp;</b></li>
+                            <li class="opcioneslista" id="opcioneslista5">Mandar correo con PHP<b>+&nbsp;</b></li>
+                            <li class="opcioneslista" id="opcioneslista6">Manipulacion de archivo txt con PHP<b>+&nbsp;</b></li>
+                        </ul>
+                    </div>
+                </div>
+          </div>
+      </div>
+      <script src="js/menu.js"></script>
+      <script src="js/aparecer_ejemplos.js"></script>
+  </body>  
+</html>

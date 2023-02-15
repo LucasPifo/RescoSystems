@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Resco Systems</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pagina sobre automatizacion, Iot, Programación y Tecnología">
+    <meta name="keywords" content="Iot, Automatización, Tecnología, Electronica, Programacion">
+    <meta name="author" content="Rob3rt0 3scobedo">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="img/Favicon.png" />
+    <meta name="theme-color" content="#C23333" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/alertify.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+                            <li><a class="waves-effect waves-dark" href="https://github.com/LucasPifo"><i class="fab fa-github"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.youtube.com/channel/UCoAbMLA_cpXcveu4ww5El2w"><i class="fab fa-youtube"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.linkedin.com/in/roberto-carlos-escobedo-santos-645095185/"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.facebook.com/Rob3rto.Escobedo"><i class="fab fa-facebook-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <a href="index.html"><img src="img/Logo Resco.png" height="40px" width="100px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Inicio
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="OpenSource.html">Open source</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Descargas.html">Descargas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="sombra"></div>
+    <div class="slider">
+        <div class="imagen actual">
+            <img src="Imagenes Pagina/451.jpg">
+            <div class="texto"></div>
+        </div>
+        <div class="imagen">
+            <img src="Imagenes Pagina/online-web-design.jpg">
+            <div class="texto"></div>
+        </div>
+        <div class="imagen">
+            <img src="Imagenes Pagina/repairman-soldering-components-in-motherboard-while-fixing-damaged-smart-phone-using-tweezers-and-iron.jpg">
+            <div class="texto"></div>
+        </div>
+        <div class="imagen">
+            <img src="Imagenes Pagina/professional-programmer-working-late-in-the-dark-office.jpg">
+            <div class="texto"></div>
+        </div>
+        <div class="imagen">
+            <img src="Imagenes Pagina/young-man-engineer-making-program-analyses.jpg">
+            <div class="texto"></div>
+        </div>
+        <p href="" class="anterior" onclick="anterior()">&#10094</p>
+        <p href="" class="siguiente" onclick="siguiente()">&#10095</p>
+        <div class="puntos">
+            <span class="punto activo" onclick="mostrar(0);">Industria 4.0 ioT
+                <p>Uso de IoT en la Indistria</p>
+            </span>
+            <span class="punto" onclick="mostrar(1);">Desarrollo web
+                <p>Paginas web responsivas</p>
+            </span>
+            <span class="punto" onclick="mostrar(2);">Sistemas embebidos
+                <p>Desarrollo de sistemas electronicos</p>
+            </span>
+            <span class="punto" onclick="mostrar(3);">Progtamación de Software
+                <p>Creación e implementación de software</p>
+            </span>
+            <span class="punto" onclick="mostrar(4);">Ssitemas de control Industrial
+                <p>Manejo de controladores logicos programables</p>
+            </span>
+        </div>
+    </div>
+    <div id="apunta_servicio"></div>
+    <div class="servicios">
+        <div class="contenedor">
+            <h3>REALIZA CUALQUIER TIPO DE PROYECTO, ¡ES FÁCIL!</h3>
+            <div class="ventajas">
+                <div class="responsivas">
+                    <div class="icono_resp">
+                        <i class="fas fa-project-diagram" style="font-size: 25"></i>
+                    </div>
+                    <div class="info_resp">
+                        <h6><b>Planeación del proyecto</b></h6>
+                        <p>Determinar el tipo de proyecto a realizar.</p>
+                    </div>
+                </div>
+                <div class="seguridad">
+                    <div class="icono_resp">
+                        <i class="fas fa-server" style="font-size: 25"></i>
+                    </div>
+                    <div class="info_resp">
+                        <h6><b>Analisis técnico</b></h6>
+                        <p>Analisar los aspectos tecnicos necesarios para implementar el proyecto.</p>
+                    </div>
+                </div>
+                <div class="analisis">
+                    <div class="icono_resp">
+                        <i class="fas fa-chart-line" style="font-size: 25"></i>
+                    </div>
+                    <div class="info_resp">
+                        <h6><b>Analitycs</b></h6>
+                        <p>Analisis empresariales completos, desarrollo de dashboards con cualquier tipo de indicador.
+                        </p>
+                    </div>
+                </div>
+                <div class="creativo">
+                    <div class="icono_resp">
+                        <i class="fas fa-satellite-dish" style="font-size: 25"></i>
+                    </div>
+                    <div class="info_resp">
+                        <h6><b>Control remotamente</b></h6>
+                        <p>Acceso a los dispositivos desde cualquier parte del mundo teniendo conección a internet.</p>
+                    </div>
+                </div>
+                <div class="domotica">
+                    <div class="icono_resp">
+                        <i class="fas fa-microchip" style="font-size: 25"></i>
+                    </div>
+                    <div class="info_resp">
+                        <h6><b>Desarrollo completo</b></h6>
+                        <p>Integración hardware y software en tus proyectos.</p>
+                    </div>
+                </div>
+                <div class="variedad">
+                    <div class="icono_resp">
+                        <i class="fas fa-toolbox" style="font-size: 25"></i>
+                    </div>
+                    <div class="info_resp">
+                        <h6><b>Mantenimiento</b></h6>
+                        <p>Mantenimiento rutinario a los sistemas desarrollados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portafolio">
+        <div class="contenedor_porta">
+            <h3>TODO CONTROLADO DESDE TU CELULAR</h3>
+            <div class="datos_portafolio">
+                <div class="movil_portafolio">
+                    <div class="img_movil"><img src="Imagenes Pagina/android.png"></div>
+                    <div class="caratce_movil">
+                        <p>Creacion de aplicacion movil para el control remoto de procesos.</p>
+                        &#9679; Aplicacion con funcionamiento offline.<br>
+                        &#9679; Consumo de datos muy bajo al utilizar internet.<br>
+                        &#9679; Base de datos en la nube con alta capacidad.<br>
+                        &#9679; Facil e intuitiva.<br>
+                        &#9679; Disponible para cualquier sistema operativo movil.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="argumento">
+            <div class="pagina" id="paginita">
+                <img src="img/Favicon.png" width="30" height="30">
+                <p>ESCO SYSTEMS</p>
+            </div>
+            <div class="info_pagina">
+                <p>Todo tipo de soluciones tecnologicas para cualquier area en donde se especialize.<br>Si tiene un
+                    proyecto en mente, alguna idea tecnologica. ¡Nosotros la podemos realizar!
+                </p>
+            </div>
+            <div class="herramientas">
+                <span class="icon-html-five"></span>
+                <div class="description">HTML 5</div>
+                <span class="icon-chrome"></span>
+                <div class="description">CHROME</div>
+                <span class="icon-power-cord"></span>
+                <div class="description">IOT</div>
+            </div>
+        </div>
+        <div class="unidos">
+            <div class="unidos2">
+                <div class="links">
+                    <p>Areas de Interes</p>
+                    <div class="otros_links">
+                        <ul>
+                            <li>PLC's</li>
+                            <li>Electrónica</li>
+                            <li>Software</li>
+                            <li>Redes y comunicación</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="links">
+                    <p>Conocimientos</p>
+                    <div class="otros_links">
+                        <ul>
+                            <li>Desarrollo Móvil</li>
+                            <li>Electrica</li>
+                            <li>Controladores</li>
+                            <li>Programación</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mapa" id="mapa">
+                <div class="punto_ubica"></div>
+                <img src="img/mapa.png">
+                <div class="ubica">
+                    <p>Juárez N.L, Mexico</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copy">
+        <p>CopyRight © 2021 Resco systems All Rights Reserved</p>
+    </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/alertify.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/procedimiento.js"></script>
+    <script src="js/boletin_novedades.js"></script>
+</body>
+
+</html>
