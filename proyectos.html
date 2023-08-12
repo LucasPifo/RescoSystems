@@ -137,6 +137,22 @@
             class="img-card">
         </div>
       </div>
+      <div class="row border-bottom">
+        <div data-aos="fade-up" data-aos-delay="300" class="col col-lg-4">
+          <img src="Imagenes Pagina/proyectos/img5.jpg" alt="" class="img-card">
+        </div>
+        <div data-aos="fade-up" class="col col-lg-8 py-5">
+          <div class="container py-5">
+            <h2>Conexión http node js con PLC S7 1200</h2>
+            <p>Sistema de comunicación entre un PLC S7 1200 y un servidor web desarrollado en Node JS conectado a una base de datos
+              en MYSQL para la manipulación de datos, se diseñó una REST API con cada una de las rutas pertinentes, asi como los controladores
+              necesarios para la aplicación, lamparas piloto para cada estado, sensor inductivo para la deteccion de metales, cada que se detecta
+              un metal lo ingresa en la base de datos.
+            </p>
+            <button type="button" class="btn btn-dark botoncin" data-id="apPlcNodejs" onclick="mostrarModal(this)">Ver mas...</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <div class="copy">
@@ -330,6 +346,28 @@
             <img src="Imagenes Pagina/proyectos/diagramaSilo.svg" alt="insertar SVG con la etiqueta image">
           </div>
         `);
+      }else if(modal == 'apPlcNodejs'){
+        $("#titulo").html("Conexión http node js con PLC S7 1200");
+        $('#video').attr('src', "https://www.youtube.com/embed/nIPPDirXiz8");
+        $("#detalles").html(`El siguiente proyecto tiene como finalidad poder detectar, ya sea, latas de aluminio, herramientas
+        estructuras, cualquier tipo de elemento metalico, con el objetivo de tener un conteo de piezas en tiempo real, directamente acomplado en un sistema
+        sin la necesidad de la creación de un Excel o el uso directamente de la base de datos. El sistema utiliza un API desarrollada en Node Js para la comunicación
+        DB - PLC, esto para cuestiones de seguridad y escalabilidad, ya que a dicho sistema pueden adaptarse mejoras de una manera simple y sin cambios relevantes`);
+        $("#elementos").html(`
+        <div class="card-header">
+          <h5>Tia Portal</h5>
+        </div>
+        <div class="card-body">
+          <img src="Imagenes Pagina/proyectos/api_plc_nodeJS.jpg">
+        </div>`);
+        $("#materiales").html(`
+            <li class="list-group-item">Tia portal v16</li>
+            <li class="list-group-item">MYSQL</li>
+            <li class="list-group-item">Node js v16</li>
+            <li class="list-group-item">4 lamparas piloto</li>
+            <li class="list-group-item">Sensor inductivo</li>
+        `);
+        $("#anexo").html(``);
       }
       $('#modalCargando').modal('show');
     }
